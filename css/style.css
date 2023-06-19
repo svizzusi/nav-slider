@@ -1,0 +1,251 @@
+:root {
+    --max-width: 1200px;
+    --heading: 3.6rem;
+    --paragraph: 1.6rem;
+    --links: .9rem;
+    --leftLinks: 1.2rem;
+    --lightGray: rgb(49, 49, 49);
+    --black: black;
+    --ghostwhite: ghostwhite;
+}
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  width: 100%;
+  font-size: 62.5%;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.nav {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.hamburger, .close-hamburger{
+  display: none;
+}
+
+.arrow-left, .arrow-right {
+  display: none;
+}
+
+.expand {
+  display: block;
+}
+.collapse {
+  display: none;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.logo {
+  width: 250px;
+}
+
+.icon-container span{
+  padding: 10px;
+}
+
+.link-section {
+  height: 70px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.link-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.link-container > li {
+  list-style: none;
+}
+
+.link-container > li > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--links);
+  font-weight: 100;
+  color: var(--lightGray);
+  text-decoration: none;
+}
+
+.quiz-links, .shop-links, .blog-links{
+  position: absolute;
+  display: none;
+  width: 200px;
+  margin-top: 20px;
+  background: white;
+  border: 1px solid lightgray;
+  padding: 22px;
+}
+
+.quiz-links ul, .shop-links ul, .blog-links ul {
+  list-style: none;
+  font-size: var(--links);
+}
+
+.quiz-links a, .shop-links a, .blog-links a {
+  color: var(--lightGray);
+  font-weight: 100;
+  text-decoration: none;
+  padding: 10px;
+}
+
+
+/******************************************
+/* Media Queries
+/*******************************************/
+
+@media screen and (max-width:1200px) {
+  .nav-container, .link-container {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width:1024px) {
+
+}
+
+@media screen and (max-width:990px) {
+
+  .hamburger {
+      display: flex;
+      align-items: center;
+  }
+
+  .closeham {
+      display: none;
+  }
+
+  .arrow-right {
+    display: flex;
+  }
+
+  .arrow-left {
+    display: none;
+  }
+  
+  .link-section {
+    display: none;
+    height: calc(100vh - 70px);
+    top: 70px;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    background:rgba(0, 0, 0, 0.5);
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 30px;
+    background: white;
+    width: 100%;
+    max-width: 360px;
+    height: calc(100vh - 70px);
+  }
+  
+  .link-container > li > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--leftLinks);
+    font-weight: 100;
+    color: var(--lightGray);
+    text-decoration: none;
+  }
+  .quiz-links, .shop-links, .blog-links{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 360px;
+    height: calc(100vh - 70px);
+    margin-top: 0px;
+    background: white;
+    border: none;
+    padding: 30px;
+  }
+  
+  .quiz-links ul, .shop-links ul, .blog-links ul {
+    gap: 30px;
+    list-style: none;
+    font-size: var(--leftLinks);
+  }
+ 
+  .quiz-links li, .shop-links li, .blog-links li {
+    display: flex;
+  }
+
+
+  
+  .quiz-links a, .shop-links a, .blog-links a {
+    color: var(--lightGray);
+    font-weight: 100;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  main img{
+    z-index: -2;
+  }
+
+}
+
+@media screen and (max-width:750px) {
+
+.person {
+  display: none;
+}
+
+.nav-container {
+  padding: 0 20px;
+}
+}
